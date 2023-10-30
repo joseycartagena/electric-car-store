@@ -2,4 +2,261 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.all {
+  display: grid;
+  grid-template-rows: 100px 100px 1fr 90px;
+  grid-template-areas: "header" "aside" "main" "footer";
+}
+.all header {
+  grid-area: header;
+  background-color: rgb(47, 47, 228);
+}
+.all header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+.all header nav .myicon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.all header nav .myicon figure {
+  width: 50px;
+}
+.all header nav .myicon figure img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.all header nav .burguer i {
+  font-size: 40px;
+}
+.all header nav .menu {
+  display: none;
+}
+.all aside {
+  grid-area: aside;
+  background-color: rgb(234, 233, 233);
+}
+.all aside .filtros {
+  margin-top: 18px;
+}
+.all aside .filtros .selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.all aside .filtros .selector select {
+  width: 80vw;
+  height: 30px;
+  font-size: 1.1rem;
+}
+.all aside .filtros .selector p {
+  font-size: 1.1rem;
+}
+.all main {
+  grid-area: main;
+  background-color: white;
+}
+.all main .card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #e3dfdf;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+}
+.all main .card-header {
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+.all main .card-subheader {
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: rgb(99, 99, 99);
+}
+.all main .card-body {
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all main .card-body img {
+  height: 200px;
+}
+.all main .card-footer {
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+}
+.all main .boton {
+  background-color: rgb(47, 47, 228);
+  color: white;
+  height: 50px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.all main .paginas {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.all main .numeros {
+  border: 1px solid rgb(177, 172, 172);
+  padding: 10px;
+  border-radius: 1px;
+}
+.all main .numeros a {
+  text-decoration: none;
+}
+.all footer {
+  grid-area: footer;
+  background-color: rgb(22, 22, 165);
+  color: white;
+}
+.all footer .icons-rrss {
+  padding: 10px;
+}
+.all footer .icons-rrss figure {
+  display: flex;
+  width: 25px;
+  margin: 0 auto;
+}
+.all footer .icons-rrss figure img {
+  width: 100%;
+}
+.all footer .icons-rrss p {
+  text-align: center;
+  font-weight: 800;
+  padding-top: 5px;
+}
+
+@media (min-width: 576px) {
+  .all {
+    grid-template-areas: "header header header header header" "aside main main main main" "footer footer footer footer footer";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 220px;
+  }
+  .all header nav .myicon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+  }
+  .all header nav .myicon h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .all header nav .myicon figure {
+    width: 40px;
+  }
+  .all header nav .burguer {
+    display: none;
+  }
+  .all header nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+  }
+  .all aside .filtros .selector select {
+    width: 80%;
+  }
+  .all main .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+  .all main .cards #tres, .all main .cards #cuatro {
+    display: none;
+  }
+  .all main .card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #e3dfdf;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .all main .card-body {
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .all main .card-body img {
+    height: 200px;
+  }
+}
+@media (min-width: 576px) and (min-width: 992px) {
+  .all {
+    grid-template-areas: "header aside aside aside aside" "header main main main main" "footer main main main main";
+    grid-template-rows: 100px 500px 100px;
+    grid-template-columns: 300px;
+  }
+  .all header {
+    /*height: 100vh;*/
+  }
+  .all header nav {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .all header nav .myicon {
+    /*display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    h1 {
+        font-size: 24px;
+        font-weight: 800;
+    }*/
+  }
+  .all header nav .myicon figure {
+    width: 40px;
+  }
+  .all header nav .burguer {
+    display: none;
+  }
+  .all header nav .menu {
+    flex-direction: column;
+    text-align: center;
+  }
+  .all main {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .all main .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px;
+  }
+  .all main .cards #tres, .all main .cards #cuatro {
+    display: inherit;
+  }
+  .all aside .filtros .selector select {
+    width: 80%;
+  }
 }/*# sourceMappingURL=styles.css.map */
